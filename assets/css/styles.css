@@ -64,7 +64,7 @@ body {
     height: 100%;
     position: relative;
     margin-top: 1.25rem;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     display: flex;
     flex-direction: column;
     background: linear-gradient(
@@ -201,14 +201,15 @@ header .logo {
 
 .section1 p {
     color: #00000064;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 600;
 }
 
 .section1 .illustration {
     width: 100%;
     overflow: hidden;
-
+    margin-right: auto;
+    transform: translateX(6rem);
 }
 
 .illustration > img {
