@@ -41,6 +41,8 @@ Users should be able to:
 ### Screenshot
 
 ![URL shortening API preview](./assets/design/image.png)
+![URL shortening API preview](./assets/design/Image%20with%20shortened%20link%20preview%20.png)
+
 
 ### Links
 
