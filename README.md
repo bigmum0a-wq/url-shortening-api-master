@@ -40,7 +40,7 @@ Users should be able to:
 
 ### Screenshot
 
-![URL shortening API preview](./assets/design/image.jpg)
+![URL shortening API preview](./assets/design/image.png)
 
 ### Links
 
