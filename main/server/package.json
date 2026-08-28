@@ -1,0 +1,17 @@
+{
+  "name": "url-shortener",
+  "version": "1.0.0",
+  "description": "URL shortening application built with HTML, CSS, JavaScript and Node.js",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "url-shortener",
+    "javascript",
+    "nodejs",
+    "api"
+  ],
+  "author": "",
+  "license": "ISC"
+}
