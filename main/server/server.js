@@ -5,7 +5,7 @@ const server = http.createServer((request, response) => {
     // CORS
     response.setHeader(
         'Access-Control-Allow-Origin',
-        'http://127.0.0.1:5500'
+        'https://bigmum0a-wq.github.io'
     );
 
     response.setHeader(

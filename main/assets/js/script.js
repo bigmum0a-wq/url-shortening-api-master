@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () =>{
 
         try {
         const response = await fetch(
-            'http://localhost:3000/api/shorten',
+            'https://url-shortening-api-master-1am6.onrender.com/api/shorten',
                 {
                     method: 'POST',
                     headers: {
