@@ -70,7 +70,7 @@ body {
     background: linear-gradient(
         to bottom,
         #fff 0%,
-        #fff 52.5rem,
+        #fff 45.5rem,
         #ebe5e5 0%,
         #ebe5e5 100%
     );
@@ -206,14 +206,14 @@ header .logo {
 }
 
 .section1 .illustration {
-    width: 50%;
-    /* overflow-x: hidden; */
+    width: 100%;
+    overflow: hidden;
 
 }
 
 .illustration > img {
-    width: 50rem;
-    clip-path: inset(0 5rem 0 0);
+    width: 40rem;
+   
     overflow: hidden;
     height: 100%;
 }

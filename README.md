@@ -40,7 +40,7 @@ Users should be able to:
 
 ### Screenshot
 
-![URL shortening API preview](./main/assets/design/image.jpg)
+![URL shortening API preview](./assets/design/image.jpg)
 
 ### Links
 
@@ -72,7 +72,7 @@ cd url-shortening-api-master
 The frontend is located in:
 
 ```text
-main/index.html
+index.html
 ```
 
 You can open the file directly in your browser or use a local development server such as the VS Code Live Server extension.
@@ -84,13 +84,13 @@ The project also includes a Node.js backend responsible for communicating with t
 The backend is located in:
 
 ```text
-main/server/
+server/
 ```
 
 To run the backend locally:
 
 ```bash
-cd main/server
+cd server
 npm install
 npm start
 ```
@@ -102,51 +102,49 @@ The deployed backend is hosted on Render.
 ## Project Structure
 
 ```text
-url-shortening-api-master
-│
-├── README.md
-│
-└── main
-    │
-    ├── index.html
-    │
-    ├── assets
-    │   │
-    │   ├── css
-    │   │   └── styles.css
-    │   │
-    │   ├── design
-    │   │
-    │   ├── fonts
-    │   │   ├── OFL.txt
-    │   │   ├── Poppins-Bold.ttf
-    │   │   ├── Poppins-ExtraBoldItalic.ttf
-    │   │   └── Poppins-Regular.ttf
-    │   │
-    │   ├── images
-    │   │   ├── bg-boost-desktop.svg
-    │   │   ├── bg-boost-mobile.svg
-    │   │   ├── bg-shorten-desktop.svg
-    │   │   ├── bg-shorten-mobile.svg
-    │   │   ├── close-icon.svg
-    │   │   ├── favicon-32x32.png
-    │   │   ├── icon-brand-recognition.svg
-    │   │   ├── icon-detailed-records.svg
-    │   │   ├── icon-facebook.svg
-    │   │   ├── icon-fully-customizable.svg
-    │   │   ├── icon-instagram.svg
-    │   │   ├── icon-menu.svg
-    │   │   ├── icon-pinterest.svg
-    │   │   ├── icon-twitter.svg
-    │   │   ├── illustration-working.svg
-    │   │   └── logo.svg
-    │   │
-    │   └── js
-    │       └── script.js
-    │
-    └── server
-        ├── package.json
-        └── server.js
+  url-shortening-api-master
+  │
+  ├── README.md
+  │
+  ├── index.html
+  │
+  ├── assets
+  │   │
+  │   ├── css
+  │   │   └── styles.css
+  │   │
+  │   ├── design
+  │   │
+  │   ├── fonts
+  │   │   ├── OFL.txt
+  │   │   ├── Poppins-Bold.ttf
+  │   │   ├── Poppins-ExtraBoldItalic.ttf
+  │   │   └── Poppins-Regular.ttf
+  │   │
+  │   ├── images
+  │   │   ├── bg-boost-desktop.svg
+  │   │   ├── bg-boost-mobile.svg
+  │   │   ├── bg-shorten-desktop.svg
+  │   │   ├── bg-shorten-mobile.svg
+  │   │   ├── close-icon.svg
+  │   │   ├── favicon-32x32.png
+  │   │   ├── icon-brand-recognition.svg
+  │   │   ├── icon-detailed-records.svg
+  │   │   ├── icon-facebook.svg
+  │   │   ├── icon-fully-customizable.svg
+  │   │   ├── icon-instagram.svg
+  │   │   ├── icon-menu.svg
+  │   │   ├── icon-pinterest.svg
+  │   │   ├── icon-twitter.svg
+  │   │   ├── illustration-working.svg
+  │   │   └── logo.svg
+  │   │
+  │   └── js
+  │       └── script.js
+  │
+  └── server
+      ├── package.json
+      └── server.js
 ```
 ## My Process
 
