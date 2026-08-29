@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () =>{
-    // const  all_a = document.querySelectorAll('a');
     const Input = document.querySelector('input');
-    // const shuternBtn = document.querySelector('.shortenbtn');
     const shterror = document.getElementById('error-message');
     const shortenForm = document.getElementById('shortenLinkf');
     const shortenLinkList = document.querySelector('#shortened-links-list');
@@ -10,7 +8,6 @@ document.addEventListener('DOMContentLoaded', () =>{
     const closeIllust = document.querySelector('.section1')
     const clearbtn = document.querySelector('#clear-links') 
     const clearparent = document.querySelector('#clear')
-
 
     
     let UserInput = undefined
@@ -103,7 +100,9 @@ document.addEventListener('DOMContentLoaded', () =>{
     }
 
     function updateClearButton() {
-        (links.length>0) ? clearparent.style.display = 'flex': clearparent.style.display = 'none' 
+        (links.length>0) ? 
+            clearparent.style.display = 'flex':
+             clearparent.style.display = 'none' ;
     }
 
     const removeLinks = () =>{
@@ -161,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () =>{
 
     function saveLinks(){
 
-        localStorage.setItem('links', JSON.stringify(links))
+        localStorage.setItem('links', JSON.stringify(links));
         
     }
 
@@ -177,7 +176,13 @@ document.addEventListener('DOMContentLoaded', () =>{
 
             <span class="cl-url">
                 <span class="lik">${shortURL}</span>
-                <button class="copy btn">Copy</button>
+                
+                    <button class="copy btn">
+                        Copy
+                    </button>
+                    <button class="delete btn" aria-label="Delete link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash2-icon lucide-trash-2"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>                    </button>
+                    </button>
             </span>
         `;
 
@@ -199,6 +204,21 @@ document.addEventListener('DOMContentLoaded', () =>{
                 }, 3000);
 
             });
+        });
+    
+        const deleteBtn = li.querySelector(".delete");
+
+        deleteBtn.addEventListener("click", () => {
+
+            links = links.filter(link =>
+                link.apilink !== shortURL
+            );
+
+            saveLinks();
+
+            li.remove();
+
+            updateClearButton();
         });
 
         return li;
