@@ -601,7 +601,104 @@ footer {
     margin-bottom: -.6rem;
 }
 
+/* =========================================================
+   TABLET — 601px TO 1000px
+   ========================================================= */
 
+@media screen and (min-width: 761px) and (max-width: 1200px) {
+
+    body{
+         background: linear-gradient(
+        to bottom,
+        #fff 0%,
+        #fff 41.5rem,
+        #ebe5e5 0%,
+        #ebe5e5 100%
+    );
+    }
+
+    .section1 h1 {
+        font-size: 3rem;
+    }
+
+    .section1 p {
+        font-size: 1rem;
+    }
+
+    /* .section1 .illustration {
+        transform: translateX(-2rem);
+    } */
+
+    .illustration > img {
+        width: 120%;
+    }
+
+    /* SHORTEN FORM */
+
+    .section2 {
+        width: 100%;
+        padding: 2rem;
+    }
+
+    input {
+        width: 100%;
+        min-width: 0;
+        flex: 1;
+    }
+
+    form{
+        width: 100%;
+        flex-shrink: 0;
+        display: flex;
+    }
+
+    .shortenbtn {
+        flex-shrink: 0;
+    }
+
+    /* SHORTENED LINKS */
+
+    .SHORTEN {
+        width: 100%;
+        gap: 1rem;
+        font-size: 1rem;
+    }
+
+    .orginal {
+        min-width: 0;
+        overflow-wrap: anywhere;
+    }
+
+    .cl-url {
+        display: flex;
+        align-items: center;
+        min-width: 0;
+    }
+
+
+    .section3-header {
+        width: 60%;
+    }
+
+    .cards {
+        gap: 1rem;
+    }
+
+    .cards div {
+        width: 33.33%;
+        padding: 1.5rem;
+    }
+
+    .cards div h3 {
+        font-size: 1.2rem;
+    }
+
+
+    .footer-links {
+        gap: 2rem;
+        margin-right: 2rem;
+    }
+}
 
 /* =========================================================
    MOBILE — 760px AND BELOW
@@ -623,7 +720,7 @@ footer {
         background: linear-gradient(
             to bottom,
             #fff 0%,
-            #fff 73rem,
+            #fff 65rem,
             #ebe5e5 0%,
             #ebe5e5 100%
         );
@@ -824,24 +921,19 @@ footer {
         background-position: right center;
     }
 
-    input {
-        width: 100%;
-        height: 3rem;
 
-        padding: 0.5rem 1rem;
-        margin-right: 0;
+
+    form{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
     }
 
     .section2 button {
         width: 100%;
         height: 3rem;
-
         margin: 0;
         margin-top: 2rem;
-    }
-
-    #error-message {
-        top: 4.5rem;
     }
 
 
@@ -1031,92 +1123,3 @@ footer {
     }
 }
 
-/* =========================================================
-   TABLET — 601px TO 1000px
-   ========================================================= */
-
-@media screen and (min-width: 761px) and (max-width: 1100px) {
-
-
-    .section1 h1 {
-        font-size: 3rem;
-    }
-
-    .section1 p {
-        font-size: 1rem;
-    }
-
-    /* .section1 .illustration {
-        transform: translateX(-2rem);
-    } */
-
-    .illustration > img {
-        width: 120%;
-    }
-
-    /* SHORTEN FORM */
-
-    .section2 {
-        width: 100%;
-        padding: 2rem;
-    }
-
-    input {
-        width: 100%;
-        min-width: 0;
-        flex: 1;
-    }
-
-    form{
-        width: 100%;
-        flex-shrink: 0;
-        display: flex;
-    }
-
-    .shortenbtn {
-        flex-shrink: 0;
-    }
-
-    /* SHORTENED LINKS */
-
-    .SHORTEN {
-        width: 100%;
-        gap: 1rem;
-        font-size: 1rem;
-    }
-
-    .orginal {
-        min-width: 0;
-        overflow-wrap: anywhere;
-    }
-
-    .cl-url {
-        display: flex;
-        align-items: center;
-        min-width: 0;
-    }
-
-
-    .section3-header {
-        width: 60%;
-    }
-
-    .cards {
-        gap: 1rem;
-    }
-
-    .cards div {
-        width: 33.33%;
-        padding: 1.5rem;
-    }
-
-    .cards div h3 {
-        font-size: 1.2rem;
-    }
-
-
-    .footer-links {
-        gap: 2rem;
-        margin-right: 2rem;
-    }
-}
