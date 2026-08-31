@@ -89,7 +89,7 @@ const server = http.createServer((request, response) => {
 
                 response.end(
                     JSON.stringify({
-                        error: 'Unable to shorten URL'
+                        error: 'Unable to shorten this URL. Please try again.'
                     })
                 );
             }
