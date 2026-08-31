@@ -8,11 +8,11 @@ document.addEventListener('DOMContentLoaded', () =>{
     const closeIllust = document.querySelector('.section1')
     const clearbtn = document.querySelector('#clear-links') 
     const clearparent = document.querySelector('#clear')
+    const shortenBtn = document.querySelector('.shortenbtn')
 
     
     let UserInput = undefined
-    let links = []
-
+    let links = [];
 
     function main() {
 
@@ -28,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () =>{
         updateClearButton()
         errorDisplay();
         removeLinks()
+
     }
 
     const errorDisplay = () => {
@@ -36,19 +37,26 @@ document.addEventListener('DOMContentLoaded', () =>{
 
             e.preventDefault();
             if(Input.value === ''){
-                Input.style.border = '2px solid rgb(253, 6, 6)';
+                Input.classList.add('error');
                 shterror.textContent = 'Please add a link';
                 return
             }
+
 
             UserInput = Input.value.trim()
 
             if(!isValidlink(UserInput)){
                 shterror.textContent = 'Invalid link. TRy again'
-                Input.style.border = '4px solid rgb(253, 6, 6)';
+                Input.classList.add('error');
 
                 return
-            } 
+            }
+            else{ 
+                if(Input.classList.contains('error'))
+                {
+                    Input.classList.remove('error');
+                }
+            }
 
             const Userlink = new URL(UserInput);
 
@@ -58,11 +66,12 @@ document.addEventListener('DOMContentLoaded', () =>{
 
             if (existingLink) {
                 shterror.textContent = 'This URL has already been shortened!';
-                shterror.style.color = "rgb(6, 253, 27)"
-                Input.style.border = '2px solid rgb(6, 253, 27)';
+                Input.classList.add('already');
+                shterror.classList.add('already-ex');
 
                 return;
             }
+
 
             APIcontrol(Userlink);
 
@@ -70,13 +79,23 @@ document.addEventListener('DOMContentLoaded', () =>{
 
         Input.addEventListener('input', () => {
             
-            if(Input.value!=='') 
+            shterror.textContent = ''
+            if(Input.classList.contains('error'))
             {
-                shterror.textContent = ''
-                Input.style.border = 'none'
-
-                return
+                Input.classList.remove('error');
             }
+
+            if(Input.classList.contains('already'))
+            {
+                Input.classList.remove('already');
+            }
+
+            if(shterror.classList.contains('already-ex'))
+            {
+                shterror.classList.remove('already-ex');
+
+            }
+
 
         })
 
@@ -85,6 +104,15 @@ document.addEventListener('DOMContentLoaded', () =>{
             menuIcon.classList.toggle('open')
             setMenu.classList.toggle('open')
             closeIllust.classList.toggle('open')
+            if(menuIcon.classList.contains('open'))
+            {
+                menuIcon.setAttribute('aria-expanded', 'true')
+            }
+            else
+            {
+                menuIcon.setAttribute('aria-expanded', 'false')
+
+            }
 
         })
                    
@@ -118,6 +146,8 @@ document.addEventListener('DOMContentLoaded', () =>{
 
     async function APIcontrol(Userlink) {
 
+        shortenBtn.disabled = true;
+        shortenBtn.textContent = 'Shortening...'
         try {
         const response = await fetch(
             'https://url-shortening-api-master-1am6.onrender.com/api/shorten',
@@ -134,17 +164,32 @@ document.addEventListener('DOMContentLoaded', () =>{
 
             const data = await response.json();
 
-            console.log(data);
+            // console.log(data);
+
+
+            if(!response.ok || !data.result_url){
+                shterror.textContent = data.error ||
+                 'Could not shorten that link. Try again.';
+                return;
+            }
 
             const shortURL = data.result_url;
 
-            console.log(shortURL);
+
+            // console.log(shortURL);
 
             addShortenedLink(shortURL);
 
         } catch (error) {
-            console.log(`Error: ${error}`);
+            shterror.textContent =
+                 'Unable shorten this link. Please try again.';
         }
+        finally{
+            shortenBtn.disabled = false;
+            shortenBtn.textContent = 'Shorten It'
+        }
+
+
     }
 
 
@@ -181,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () =>{
                         Copy
                     </button>
                     <button class="delete btn" aria-label="Delete link">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash2-icon lucide-trash-2"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>                    </button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash2-icon lucide-trash-2"><path d="M10 11v6"/><path d="M14 11v6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M3 6h18"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg> 
                     </button>
             </span>
         `;
@@ -195,12 +240,11 @@ document.addEventListener('DOMContentLoaded', () =>{
             navigator.clipboard.writeText(shortURL).then(() => {
 
                 copybtn.textContent = "copied!";
-                copybtn.style.backgroundColor = "#000000";
+                copybtn.classList.add('copied')
 
                 setTimeout(() => {
                     copybtn.textContent = "Copy";
-                    copybtn.style.backgroundColor =
-                        "hsl(180, 66%, 49%)";
+                    copybtn.classList.remove('copied')
                 }, 3000);
 
             });

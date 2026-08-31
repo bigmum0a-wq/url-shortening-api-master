@@ -71,8 +71,8 @@ body {
         to bottom,
         #fff 0%,
         #fff 50rem,
-        #ebe5e5 0%,
-        #ebe5e5 100%
+        hsl(0, 0%, 75%) 0%,
+        hsl(0, 0%, 75%) 100%
     );
 
     /* min-width: 1440px; */
@@ -272,12 +272,24 @@ input {
     outline: none;
 }
 
-    form{
-        /* background-color: #2acfcf; */
-        width: 80%;
-        flex-shrink: 0;
-        display: flex;
-    }
+input:focus-visible {
+    border: 2px solid rgb(10, 0, 20);
+}
+
+input.error{
+    border : 4px solid rgb(253, 6, 6);
+}
+
+input.already{
+    border: 2px solid rgb(6, 253, 27);
+}
+
+form{
+    /* background-color: #2acfcf; */
+    width: 80%;
+    flex-shrink: 0;
+    display: flex;
+}
 
 .shortenbtn {
     padding: 0.6rem 2rem;
@@ -285,6 +297,10 @@ input {
     font-weight: 600;
     border: none;
     cursor: pointer;
+}
+
+.copy.copied{
+    background-color: #000;
 }
 
 #error-message {
@@ -295,6 +311,10 @@ input {
     font-size: 0.8rem;
     font-weight: 400;
     font-style: italic;
+}
+
+#error-message.already-ex{
+    color: rgb(6, 253, 27);
 }
 
 
@@ -445,7 +465,7 @@ input {
 
 .section4-place {
     margin-top: 5rem;
-    background-color: #36135c;
+    background-color: #28143e;
     background-image: url('../images/bg-boost-desktop.svg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -489,7 +509,7 @@ input {
 
 .footer-place {
     color: #fff;
-    background-color: #000;
+    background-color: #171515;
     background-size: cover;
     flex: 1;
 }
@@ -521,7 +541,6 @@ footer {
 
 .footer-links {
     display: flex;
-
     gap: 5rem;
     margin-right: 5rem;
 }
@@ -612,8 +631,8 @@ footer {
         to bottom,
         #fff 0%,
         #fff 41.5rem,
-        #ebe5e5 0%,
-        #ebe5e5 100%
+        hsl(0, 0%, 75%) 0%,
+        hsl(0, 0%, 75%) 100%
     );
     }
 
@@ -720,9 +739,9 @@ footer {
         background: linear-gradient(
             to bottom,
             #fff 0%,
-            #fff 65rem,
-            #ebe5e5 0%,
-            #ebe5e5 100%
+            #fff 63.5rem,
+            hsl(0, 0%, 75%) 0%,
+            hsl(0, 0%, 75%) 100%
         );
 
     }
@@ -798,6 +817,8 @@ footer {
 
     .menu {
         display: inline;
+        width: 3.5rem;
+        height: 3.5rem;
     }
 
     .menu-el.open .menu {
@@ -806,6 +827,12 @@ footer {
 
     .menu-el.open .close {
         display: block;
+    }
+    .menu-el{
+        background-color: transparent;
+        border-radius: .5rem;
+        border: .1rem solid rgb(158, 152, 152);
+
     }
 
     .close {
@@ -1097,7 +1124,7 @@ footer {
         align-items: center;
         justify-content: center;
         margin-right: 0;
-        gap: 5rem;
+        gap: 3rem;
     }
 
     .footer-links ul li,
@@ -1105,10 +1132,14 @@ footer {
         text-align: center;
     }
 
+    .footer-links h3{
+        margin-bottom: 2rem;
+    }
+
     .footer-content .logo {
         margin: 0;
         margin-bottom: 3rem;
-        margin-left: -3rem;
+        
     }
 
     .social-icons {
