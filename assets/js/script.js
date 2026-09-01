@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', () =>{
 
             addShortenedLink(shortURL);
 
-        } catch (error) {
+        } catch {
             shterror.textContent =
                  'Unable shorten this link. Please try again.';
         }
