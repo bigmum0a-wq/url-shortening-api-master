@@ -301,17 +301,16 @@ form{
     background-color: #000;
 }
 
-#error-message {
+.error-message {
     position: absolute;
     margin-top: 3rem;
     color: red;
-    font-family: 'Poppins';
     font-size: 0.8rem;
     font-weight: 400;
     font-style: italic;
 }
 
-#error-message.already-ex{
+.error-message.already-ex{
     color: rgb(6, 253, 27);
 }
 
@@ -574,20 +573,15 @@ footer {
 }
 
 #clear{
-    display: row;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     display: none;
 }
 
-
-
 .attribution {
     padding: 0.625rem;
-
     color: rgba(245, 237, 237, 0.692);
-    font-family: 'Poppins';
     font-weight: 700;
     text-align: center;
 }
@@ -733,7 +727,7 @@ footer {
         max-width: none;
         margin-top: 0;
         /* overflow-x: hidden; */
-        margin: 0;
+        margin: 0rem;
         background: linear-gradient(
             to bottom,
             #fff 0%,
@@ -751,7 +745,7 @@ footer {
 
     header {
         width: 100%;
-        margin: 0;
+        margin: 0rem;
         position: relative;
         display: flex;
         flex-direction: column;
@@ -843,7 +837,7 @@ footer {
         width: 100%;
         display: flex;
         flex-direction: column;
-        margin: 0;
+        margin: 0rem;
         padding: 5rem;
         border-bottom-left-radius: 0.5rem;
         border-bottom-right-radius: 0.5rem;
@@ -957,7 +951,7 @@ footer {
     .section2 button {
         width: 100%;
         height: 3rem;
-        margin: 0;
+        margin: 0rem;
         margin-top: 2rem;
     }
 
@@ -990,7 +984,7 @@ footer {
 
     .orginal {
         width: 100%;
-        margin: 0;
+        margin: 0rem;
         margin-bottom: 0.3rem;
         padding: 0.8rem 2rem;
         background-color: #fff;
@@ -1012,7 +1006,7 @@ footer {
 
     .copy {
         padding: 0.8rem 1.5rem;
-        margin: 0;
+        margin: 0rem;
         margin-top: 0.5rem;
         
     }
@@ -1053,7 +1047,7 @@ footer {
         height: 15rem;
     }
 
-    .cards div img {
+    .cards>div>img {
         position: absolute;
         left: 40%;
         padding: 1rem;
@@ -1081,7 +1075,7 @@ footer {
     .section4-place {
         width: 100%;
         height: 20rem;
-        margin: 0;
+        margin: 0rem;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -1135,13 +1129,13 @@ footer {
     }
 
     .footer-content .logo {
-        margin: 0;
+        margin: 0rem;
         margin-bottom: 3rem;
         
     }
 
     .social-icons {
-        margin: 0;
+        margin: 0rem;
         margin-top: 3rem;
         margin-left: -1rem;
     }
@@ -1151,4 +1145,3 @@ footer {
         margin-right: 3rem;
     }
 }
-
